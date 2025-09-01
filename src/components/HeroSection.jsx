@@ -11,7 +11,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="w-full h-screen overflow-hidden ">
+    <section className="w-full h-screen overflow-hidden mt-12 ">
       {/* Responsive Full Image with animation */}
       <picture>
         <source media="(max-width: 768px)" srcSet={heroMobile} />
