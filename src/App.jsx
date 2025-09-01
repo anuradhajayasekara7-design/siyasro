@@ -32,7 +32,7 @@ const HomePage = () => {
     <div className="min-h-screen relative">
       <ScrollProgress />
       <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
-
+<br /><br /><br />
       <div className={`transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
         <div id="home">
           <HeroSection setActiveSection={setActiveSection} />
