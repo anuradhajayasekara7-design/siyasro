@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import heroDesktop from '../assets/siyasro-hero-desktop.png';
-import heroMobile from '../assets/siyasro-hero-mobile.png';
+import heroDesktop from '../assets/siyasro-hero-desktop.svg';
+import heroMobile from '../assets/siyasro-hero-mobile.svg';
 
 const HeroSection = () => {
   const [loaded, setLoaded] = useState(false);
