@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import logo from '../assets/logo.png';
 
 const Navbar = ({ activeSection, setActiveSection }) => {
-  const navItems = ['Home siyas', 'Gallery', 'Services', 'Videos', 'Contact'];
+  const navItems = ['Home', 'Gallery', 'Services', 'Videos', 'Contact'];
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
