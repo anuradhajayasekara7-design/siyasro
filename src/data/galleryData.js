@@ -1,38 +1,45 @@
+// src/data/galleryData.js
+
+// ✅ Import all gallery images
+import img1 from '../assets/Gallery/img1.jpg';
+import img2 from '../assets/Gallery/img2.jpg';
+import img3 from '../assets/Gallery/img3.jpg';
+import img4 from '../assets/Gallery/img4.jpg';
+import img5 from '../assets/Gallery/img5.jpg';
+import img6 from '../assets/Gallery/img6.JPG';
+import img7 from '../assets/Gallery/img7.JPG';
+import img8 from '../assets/Gallery/img8.JPG';
+import img9 from '../assets/Gallery/img9.JPG';
+import img10 from '../assets/Gallery/img10.JPG';
+import img11 from '../assets/Gallery/img11.JPG';
+import img12 from '../assets/Gallery/img12.jpg';
+import img13 from '../assets/Gallery/img13.jpg';
+import img14 from '../assets/Gallery/img14.jpg';
+import img15 from '../assets/Gallery/img15.jpg';
+import img16 from '../assets/Gallery/img16.jpg';
+import img17 from '../assets/Gallery/img17.jpg';
+import img18 from '../assets/Gallery/img18.jpg';
+import img19 from '../assets/Gallery/img19.jpg';
+
+// ✅ Export gallery images array
 export const galleryImages = [
-  {
-    id: 1,
-    src: 'https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/481112511_662695969436661_3182842042240820379_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=TZxsSRkVevYQ7kNvwEdNnLa&_nc_oc=AdnXuq5e4vy7Ua5zE0TJDyNODB_haQW2KdNdPfsPkgUy1Xt7owLcLZYPZYN6qwuQLPk&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=Xc0iFnb8pvk0F6ou_t9btg&oh=00_AfTddT1lNBBCC-a27ndS6x1Dcl9Gmv-4y9ix6BrLL5dwAw&oe=688AFC7F',
-    title: 'Custom Business Signage',
-    category: 'Signage'
-  },
-  {
-    id: 2,
-    src: 'https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/481065210_658652819840976_1601343315545913321_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=IiNJ2b-BlYMQ7kNvwEss6NN&_nc_oc=AdkMcxxLk_64QGTFYifHU_0wToQBQSa3hrxLnML88ZDyKWekxHHuuyNIT7CC9kpknYc&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=1no3al0V7LkpwmdUGL7uzg&oh=00_AfSJ3f1xMsu7Ed18fTJ9Grs_uyy3daTU_xqTJrSvI_yuQQ&oe=688ADB4F',
-    title: 'Precision Metal Cutting',
-    category: 'Metal Work'
-  },
-  {
-    id: 3,
-    src: 'https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/481469903_658653056507619_8522495129067577022_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ybewD0dW3uEQ7kNvwEdPSwG&_nc_oc=Adk3jXW6UpemYwPcE_8t9rfegYh_1i2HfJ_bAcXnowIEoZgHrKeLM54Jwc9IlnnzYAE&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=DZmJjGWgF0xO61upvpMuYw&oh=00_AfRAOIaLxutsObCWuSuksdXjZ6Y9xXhcT3YI9YruwDfOeA&oe=688ADF16',
-    title: 'Acrylic Display Boards',
-    category: 'Acrylic'
-  },
-  {
-    id: 4,
-    src: 'https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/481213440_658653086507616_5559925528952704165_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=FG_PGv4OBuMQ7kNvwFihkbP&_nc_oc=AdkoCBnmFgOpEXtbuXIWLCfBRM6VSr9mpVfVE9R9xqEGdgMeZGKLpbBGtmfgsp2jGJ4&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=2W7dvXbNs15ZKj5o1S8tXQ&oh=00_AfTpZjBaEQgdZfqGFDsOLJ1GHNgU9ScSqfLfMN7e_bcpnw&oe=688AF6CB',
-    title: 'Wood Engraving Art',
-    category: 'Wood'
-  },
-  {
-    id: 5,
-    src: 'https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/480742083_658652826507642_4128548989387764606_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=9OSfaxylOj8Q7kNvwEMV_eV&_nc_oc=AdncFj14wN6lMXX_wt1qIV0uV9Gx7LtrFnwGMDMclNREyIr7VguLYZKXaNtGSEEpy5w&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=KoWHhpWVfUSbCWyCsdIm_g&oh=00_AfQjfHNqbGx1w6rf621nXyvHlM441EJ4FAmtLVqm2Rc6lw&oe=688AF5C5',
-    title: 'LED Backlit Signs',
-    category: 'LED Signs'
-  },
-  {
-    id: 6,
-    src: 'https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/476637717_646867541019504_8434830877953241393_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=QT9ToJfTzcUQ7kNvwGpKp5a&_nc_oc=AdlmQgANdULLCXegOqbKJMdc1xc5C2qofMFw1QnjrZ1YaMlT2yB0EFmjDUnycBD4byc&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=RBjOFnoe7uKHaZHPjh5C2g&oh=00_AfTbj-Obfmzm0jRsxSCMgGjkaCOf4K3wKRMdKEE5c43JNw&oe=688ADEBD',
-    title: 'Corporate Branding',
-    category: 'Corporate'
-  }
+  { id: 1, src: img1, title: 'Custom Business Signage', category: 'Signage' },
+  { id: 2, src: img2, title: 'Precision Metal Cutting', category: 'Metal Work' },
+  { id: 3, src: img3, title: 'Acrylic Display Boards', category: 'Acrylic' },
+  { id: 4, src: img4, title: 'Wood Engraving Art', category: 'Wood' },
+  { id: 5, src: img5, title: 'LED Backlit Signs', category: 'LED Signs' },
+  { id: 6, src: img6, title: 'Corporate Branding', category: 'Corporate' },
+  { id: 7, src: img7, title: 'Shop Boards', category: 'Signage' },
+  { id: 8, src: img8, title: 'Event Backdrops', category: 'Events' },
+  { id: 9, src: img9, title: '3D Acrylic Letters', category: 'Acrylic' },
+  { id: 10, src: img10, title: 'Custom Cut Designs', category: 'Metal Work' },
+  { id: 11, src: img11, title: 'Wall Branding', category: 'Corporate' },
+  { id: 12, src: img12, title: 'LED Neon Lights', category: 'LED Signs' },
+  { id: 13, src: img13, title: 'Interior Signs', category: 'Signage' },
+  { id: 14, src: img14, title: 'Name Boards', category: 'Wood' },
+  { id: 15, src: img15, title: 'Creative Displays', category: 'Acrylic' },
+  { id: 16, src: img16, title: '3D Lettering', category: 'Signage' },
+  { id: 17, src: img17, title: 'Business Logo Signs', category: 'Corporate' },
+  { id: 18, src: img18, title: 'Event Stage Design', category: 'Events' },
+  { id: 19, src: img19, title: 'Outdoor Billboards', category: 'Signage' }
 ];
