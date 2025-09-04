@@ -2,8 +2,8 @@ export const videos = [
   {
     id: 1,
     title: 'Precision Laser Cutting in Action',
-    url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    thumbnail: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=400&fit=crop'
+    url: 'https://www.youtube.com/watch?v=2n2bpmBU7ho',
+    thumbnail: 'https://i9.ytimg.com/vi_webp/2n2bpmBU7ho/mq2.webp?sqp=CNjz5sUG-oaymwEoCMACELQB8quKqQMcGADwAQH4Ac4FgAKACooCDAgAEAEYRCBNKGUwDw==&rs=AOn4CLA4ha32m0l4xvdxs15w5g8ti3Z_JQ'
   },
   {
     id: 2,
