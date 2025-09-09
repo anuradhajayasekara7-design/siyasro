@@ -36,8 +36,8 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4 text-white">Contact</h3>
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-center gap-2"><Phone size={18} /> +94 77 788 1715</li>
-              <li className="flex items-center gap-2"><Mail size={18} /> info@siyasro.lk</li>
-              <li>No. 58, Main Street, Kiribathgoda</li>
+              <li className="flex items-center gap-2"><Mail size={18} /> siyasroads@gmail.com</li>
+              <li>117/B Metikotuwa, Dankotuwa</li>
             </ul>
           </div>
 
