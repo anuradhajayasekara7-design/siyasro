@@ -33,7 +33,7 @@ const HomePage = () => {
       <ScrollProgress />
       <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
 
-      <div className={`transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'} bg-fixed`}>
         <div id="home">
           <HeroSection setActiveSection={setActiveSection} />
           <FeaturesSection />
