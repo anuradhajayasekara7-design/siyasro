@@ -62,8 +62,21 @@ const Footer = () => {
         </div>
 
         {/* Bottom */}
-        <div className="mt-10 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
-          &copy; {new Date().getFullYear()} Siyasro Advertising Solutions. All rights reserved.
+        <div className="mt-10 pt-6 border-t border-gray-700 text-center text-sm text-gray-500 space-y-2">
+          <p>
+            &copy; {new Date().getFullYear()} Siyasro Advertising Solutions. All rights reserved.
+          </p>
+          <p>
+            Powered by{" "}
+            <a
+              href="https://alphagencoding.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-green-400 font-semibold"
+            >
+              Alpha Gen Coding
+            </a>
+          </p>
         </div>
       </div>
     </footer>
