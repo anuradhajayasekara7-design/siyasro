@@ -1,4 +1,7 @@
+'use client';
+
 import React, { useState } from 'react';
+import Image from 'next/image';
 import logo from '../assets/logo.png';
 
 const Navbar = ({ activeSection, setActiveSection }) => {
@@ -10,9 +13,10 @@ const Navbar = ({ activeSection, setActiveSection }) => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <img
+          <Image
             src={logo}
             alt="Siyasro Logo"
+            priority
             className="h-10 w-20 object-contain"
           />
         </div>

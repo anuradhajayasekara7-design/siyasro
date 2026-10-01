@@ -1,6 +1,9 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+'use client';
+
+import React, { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { galleryImages } from '../data/galleryData';
-import { Link } from 'react-router-dom';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 
@@ -17,9 +20,12 @@ function shuffle(arr) {
 }
 
 const GallerySection = () => {
-  // pick once per mount
-  const displayedImages = useMemo(() => {
-    return shuffle(galleryImages).slice(0, Math.min(MAX_IMAGES, galleryImages.length));
+  // Pre-render a stable selection, then shuffle once on mount (avoids hydration mismatch)
+  const [displayedImages, setDisplayedImages] = useState(() => galleryImages.slice(0, MAX_IMAGES));
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- random pick must happen client-side only
+    setDisplayedImages(shuffle(galleryImages).slice(0, MAX_IMAGES));
   }, []);
 
   const [visible, setVisible] = useState([]);
@@ -46,7 +52,7 @@ const GallerySection = () => {
       itemsRef.current.forEach(el => el && observer.unobserve(el));
       observer.disconnect();
     };
-  }, []);
+  }, [displayedImages]);
 
   return (
     <section className="py-20 bg-white">
@@ -68,11 +74,11 @@ const GallerySection = () => {
               className={`relative cursor-pointer overflow-hidden rounded-lg shadow-md transform transition-all duration-700 ease-out
                 ${visible.includes(index) ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}
             >
-              <img
+              <Image
                 src={image.src}
                 alt={image.title}
-                className="w-full aspect-square object-cover hover:scale-110 transition-transform duration-300"
-                loading="lazy"
+                sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="w-full h-auto aspect-square object-cover hover:scale-110 transition-transform duration-300"
               />
             </div>
           ))}
@@ -84,13 +90,13 @@ const GallerySection = () => {
             open={openIndex >= 0}
             close={() => setOpenIndex(-1)}
             index={openIndex}
-            slides={displayedImages.map(img => ({ src: img.src, alt: img.title }))}
+            slides={displayedImages.map(img => ({ src: img.src.src, alt: img.title }))}
           />
         )}
 
         {/* View Full Gallery Button */}
         <div className="text-center mt-12">
-          <Link to="/image-gallery">
+          <Link href="/image-gallery">
             <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
               View Full Image Gallery
             </button>
