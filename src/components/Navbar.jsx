@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo-transparent.png';
 
 const Navbar = ({ activeSection, setActiveSection }) => {
   const navItems = ['Home', 'Gallery', 'Services', 'Videos', 'Contact'];
