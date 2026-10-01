@@ -1,89 +1,30 @@
-import React, { useEffect, useRef, useState } from 'react';
+'use client';
+
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import BrandLogo from './BrandLogo';
+import useSiteMotion from './useSiteMotion';
 import { galleryImages } from '../data/galleryData';
-import { Link } from 'react-router-dom';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 
-const ImageGallery = () => {
-  const [visible, setVisible] = useState([]);
-  const itemsRef = useRef([]);
+export default function ImageGallery() {
+  const motionRef = useSiteMotion();
+  const [category, setCategory] = useState('All projects');
   const [openIndex, setOpenIndex] = useState(-1);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const index = Number(entry.target.getAttribute('data-index'));
-          if (entry.isIntersecting) {
-            setVisible((prev) => [...new Set([...prev, index])]);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    itemsRef.current.forEach((el) => {
-      if (el) observer.observe(el);
-    });
-
-    return () => {
-      itemsRef.current.forEach((el) => {
-        if (el) observer.unobserve(el);
-      });
-    };
-  }, []);
-
+  const categories = ['All projects', ...new Set(galleryImages.map(image => image.category))];
+  const displayed = category === 'All projects' ? galleryImages : galleryImages.filter(image => image.category === category);
   return (
-    <section className="min-h-screen py-20 bg-white">
-      <div className="container mx-auto px-4">
-        {/* Page Title */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-800 mb-4">Image Gallery</h1>
-          <p className="text-lg text-gray-600">Browse all our laser cutting projects in detail</p>
-        </div>
-
-        {/* Back Button */}
-        <div className="text-center mb-10">
-          <Link to="/" className="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-2 rounded-full transition">
-            ← Back to Home
-          </Link>
-        </div>
-
-        {/* Full Image Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {galleryImages.map((image, index) => (
-            <div
-              key={image.id}
-              data-index={index}
-              ref={(el) => (itemsRef.current[index] = el)}
-              onClick={() => setOpenIndex(index)}
-              className={`overflow-hidden rounded-lg shadow-lg cursor-pointer transform transition-all duration-700 ease-out group
-                ${visible.includes(index) ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}
-            >
-              <img
-                src={image.src}
-                alt={image.title}
-                className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Lightbox */}
-        {openIndex >= 0 && (
-          <Lightbox
-            open={openIndex >= 0}
-            close={() => setOpenIndex(-1)}
-            index={openIndex}
-            slides={galleryImages.map((img) => ({
-              src: img.src,
-              alt: img.title,
-            }))}
-          />
-        )}
-      </div>
-    </section>
+    <main className="wrap gallery-page" ref={motionRef}>
+      <div className="gallery-page-top"><Link className="logo-link" href="/" aria-label="Siyasro Advertising home"><BrandLogo priority /></Link><Link href="/#gallery" className="text-link"><ArrowLeft size={16} /> Back to home</Link></div>
+      <div className="section-heading"><div><p className="eyebrow">CRAFTED BY SIYASRO</p><h1>Ideas made <span className="orange">visible.</span></h1></div><p className="section-intro">Explore our signage, branding and custom creations. Select a project to take a closer look.</p></div>
+      <div className="gallery-filters" aria-label="Filter projects">{categories.map(item => <button key={item} aria-pressed={category === item} className={category === item ? 'selected' : ''} onClick={() => { setCategory(item); setOpenIndex(-1); }}>{item}</button>)}</div>
+      <p className="gallery-count">{displayed.length} projects</p>
+      <div className="project-grid full-gallery">{displayed.map((image, index) => <button className="project-card" key={image.id} onClick={() => setOpenIndex(index)} aria-label={`View ${image.title}`}><div className="project-image"><Image src={image.src} alt={image.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1000px) 50vw, 33vw" /><span className="project-open"><ArrowUpRight size={22} /></span></div><div className="project-info"><span>{image.category}</span><h3>{image.title}</h3></div></button>)}</div>
+      <div className="gallery-end"><h2>Have something in mind?</h2><Link className="button button-orange" href="/#contact">Let’s bring it to life <ArrowUpRight size={18} /></Link></div>
+      <Lightbox open={openIndex >= 0} close={() => setOpenIndex(-1)} index={openIndex} slides={displayed.map(image => ({ src: image.src.src, alt: image.title }))} />
+    </main>
   );
-};
-
-export default ImageGallery;
+}
